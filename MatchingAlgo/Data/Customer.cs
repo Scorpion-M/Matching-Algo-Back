@@ -11,7 +11,7 @@ namespace MatchingAlgo.Data
         [Required]
         public DateTime Date  { get; set; }
         [Required]
-        public TimeSpan StartTime { get; set; }
+        public DateTime StartTime { get; set; }
         [Required]
         public double JobDuration { get; set; }
         [Required]
@@ -19,8 +19,8 @@ namespace MatchingAlgo.Data
         [Required] 
         public Vehicle Vehicle { get; set; }
         [Required]
-        public double StartLocation { get; set; }
+        public CoordinateXY StartLocation { get; set; }
         [Required]
-        public double EndLocation { get; set; }
+        public CoordinateXY EndLocation { get; set; }
     }
 }

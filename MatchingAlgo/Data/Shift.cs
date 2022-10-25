@@ -2,8 +2,8 @@
 {
     public class Shift:BaseEntity
     {
-        public TimeSpan StartAvailableTime { get; set; }
-        public TimeSpan EndAvailableTime { get; set; }
+        public DateTime StartAvailableTime { get; set; }
+        public DateTime EndAvailableTime { get; set; }
 
         public virtual ICollection<Driver> Drivers { get; set; }
         public Guid? DriverId { get; set; }

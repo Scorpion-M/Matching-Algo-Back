@@ -134,8 +134,8 @@ namespace MatchingAlgo.Data
                 new Shift
                 {
                     Id= Guid.NewGuid(),
-                    StartAvailableTime = new TimeSpan(9,30,0),
-                    EndAvailableTime = new TimeSpan(11,30,0),
+                    StartAvailableTime = new DateTime(2022,1,1,9,30,0),
+                    EndAvailableTime = new DateTime(2022,1,1,11,30,0),
                     DriverId = Drivers[0].Id,
                     HelperId = Helpers[0].Id,
                     
@@ -144,16 +144,16 @@ namespace MatchingAlgo.Data
                 new Shift
                 {
                     Id= Guid.NewGuid(),
-                    StartAvailableTime = new TimeSpan(8,30,0),
-                    EndAvailableTime = new TimeSpan(10,30,0),
+                    StartAvailableTime = new DateTime(2022,1,1,8,30,0),
+                    EndAvailableTime = new DateTime(2022,1,1,10,30,0),
                     HelperId = Helpers[1].Id
 
                 },
                 new Shift
                 {
                     Id= Guid.NewGuid(),
-                    StartAvailableTime = new TimeSpan(9,30,0),
-                    EndAvailableTime = new TimeSpan(11,30,0),
+                    StartAvailableTime = new DateTime(2022,1,1,9,30,0),
+                    EndAvailableTime = new DateTime(2022,1,1,11,30,0),
                     DriverId = Drivers[1].Id,                                        
                     HelperId = Helpers[2].Id,
 
@@ -162,24 +162,24 @@ namespace MatchingAlgo.Data
                 new Shift
                 {
                     Id= Guid.NewGuid(),
-                    StartAvailableTime = new TimeSpan(9,30,0),
-                    EndAvailableTime = new TimeSpan(11,30,0),
+                    StartAvailableTime = new DateTime(2022,1,1,9,30,0),
+                    EndAvailableTime = new DateTime(2022,1,1,11,30,0),
                     DriverId = Drivers[2].Id
                     
                 },                
                 new Shift
                 {
                     Id= Guid.NewGuid(),
-                    StartAvailableTime = new TimeSpan(9,30,0),
-                    EndAvailableTime = new TimeSpan(11,30,0),
+                    StartAvailableTime = new DateTime(2022,1,1,9,30,0),
+                    EndAvailableTime = new DateTime(2022,1,1,11,30,0),
                     DriverId = Drivers[3].Id
                     
                 },                
                 new Shift
                 {
                     Id= Guid.NewGuid(),
-                    StartAvailableTime = new TimeSpan(9,30,0),
-                    EndAvailableTime = new TimeSpan(11,30,0),
+                    StartAvailableTime = new DateTime(2022,1,1,9,30,0),
+                    EndAvailableTime = new DateTime(2022,1,1,11,30,0),
                     DriverId = Drivers[4].Id
                     
                 },                

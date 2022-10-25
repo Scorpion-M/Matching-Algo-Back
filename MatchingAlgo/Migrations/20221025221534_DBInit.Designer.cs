@@ -13,8 +13,8 @@ using NetTopologySuite.Geometries;
 namespace MatchingAlgo.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221023222452_DataBaseCreated")]
-    partial class DataBaseCreated
+    [Migration("20221025221534_DBInit")]
+    partial class DBInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,33 @@ namespace MatchingAlgo.Migrations
                     b.HasIndex("DriversId");
 
                     b.ToTable("AvailableDateDriver");
+
+                    b.HasData(
+                        new
+                        {
+                            AvailableDatesId = new Guid("448b917a-2ae3-4016-afa8-8fba36230d05"),
+                            DriversId = new Guid("6ac16ade-f293-4083-9c90-9af2397fd346")
+                        },
+                        new
+                        {
+                            AvailableDatesId = new Guid("c50e9108-a833-43be-96b9-91ccdd770c15"),
+                            DriversId = new Guid("eeaad275-a039-4828-89a1-b56657863794")
+                        },
+                        new
+                        {
+                            AvailableDatesId = new Guid("ff192931-d7e5-4077-ba8e-c4d130032321"),
+                            DriversId = new Guid("2558296f-7a0c-4730-ac1c-904ca1b2352c")
+                        },
+                        new
+                        {
+                            AvailableDatesId = new Guid("fe1151f7-57d7-4e14-a55d-8146201d4633"),
+                            DriversId = new Guid("7baec409-db0d-49a3-8122-9e8cad6f593b")
+                        },
+                        new
+                        {
+                            AvailableDatesId = new Guid("8584a437-f91c-41fc-9bbf-86d5ffbff0b0"),
+                            DriversId = new Guid("e4f265b4-f564-4417-82e6-e5039a87908c")
+                        });
                 });
 
             modelBuilder.Entity("AvailableDateHelper", b =>
@@ -53,6 +80,23 @@ namespace MatchingAlgo.Migrations
                     b.HasIndex("HelpersId");
 
                     b.ToTable("AvailableDateHelper");
+
+                    b.HasData(
+                        new
+                        {
+                            AvailableDatesId = new Guid("448b917a-2ae3-4016-afa8-8fba36230d05"),
+                            HelpersId = new Guid("a4f4865e-eec9-4d98-b0f5-c66fa3a87eed")
+                        },
+                        new
+                        {
+                            AvailableDatesId = new Guid("fe1151f7-57d7-4e14-a55d-8146201d4633"),
+                            HelpersId = new Guid("d2759648-0c35-47fc-8d7f-b9adbe6b7f20")
+                        },
+                        new
+                        {
+                            AvailableDatesId = new Guid("8584a437-f91c-41fc-9bbf-86d5ffbff0b0"),
+                            HelpersId = new Guid("e8f2b04d-6b60-4c35-8c6f-9f9454091821")
+                        });
                 });
 
             modelBuilder.Entity("MatchingAlgo.Data.AvailableDate", b =>
@@ -64,10 +108,10 @@ namespace MatchingAlgo.Migrations
                     b.Property<DateTime>("AvaialbeDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DriverId")
+                    b.Property<Guid?>("DriverId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("HelperId")
+                    b.Property<Guid?>("HelperId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -77,24 +121,36 @@ namespace MatchingAlgo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("be87197e-22c7-49ad-9c13-89aa039466fa"),
+                            Id = new Guid("448b917a-2ae3-4016-afa8-8fba36230d05"),
                             AvaialbeDate = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DriverId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            HelperId = new Guid("00000000-0000-0000-0000-000000000000")
+                            DriverId = new Guid("6ac16ade-f293-4083-9c90-9af2397fd346"),
+                            HelperId = new Guid("a4f4865e-eec9-4d98-b0f5-c66fa3a87eed")
                         },
                         new
                         {
-                            Id = new Guid("f806f3f3-8fc3-41cb-a0d5-aff5f0997ef4"),
+                            Id = new Guid("c50e9108-a833-43be-96b9-91ccdd770c15"),
                             AvaialbeDate = new DateTime(2022, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DriverId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            HelperId = new Guid("00000000-0000-0000-0000-000000000000")
+                            DriverId = new Guid("eeaad275-a039-4828-89a1-b56657863794")
                         },
                         new
                         {
-                            Id = new Guid("b0b2e5ca-1cb7-4c76-a363-93f06dea76b9"),
+                            Id = new Guid("ff192931-d7e5-4077-ba8e-c4d130032321"),
                             AvaialbeDate = new DateTime(2022, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DriverId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            HelperId = new Guid("00000000-0000-0000-0000-000000000000")
+                            DriverId = new Guid("2558296f-7a0c-4730-ac1c-904ca1b2352c")
+                        },
+                        new
+                        {
+                            Id = new Guid("fe1151f7-57d7-4e14-a55d-8146201d4633"),
+                            AvaialbeDate = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DriverId = new Guid("7baec409-db0d-49a3-8122-9e8cad6f593b"),
+                            HelperId = new Guid("d2759648-0c35-47fc-8d7f-b9adbe6b7f20")
+                        },
+                        new
+                        {
+                            Id = new Guid("8584a437-f91c-41fc-9bbf-86d5ffbff0b0"),
+                            AvaialbeDate = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DriverId = new Guid("e4f265b4-f564-4417-82e6-e5039a87908c"),
+                            HelperId = new Guid("e8f2b04d-6b60-4c35-8c6f-9f9454091821")
                         });
                 });
 
@@ -129,42 +185,47 @@ namespace MatchingAlgo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7bc431ae-3f80-46e9-887d-6cd354598d87"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("6ac16ade-f293-4083-9c90-9af2397fd346"),
+                            AvaliableDateId = new Guid("448b917a-2ae3-4016-afa8-8fba36230d05"),
                             DistanceToPickUp = 5.0,
                             DriverLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (51.518 7.45425)"),
+                            ShiftId = new Guid("35bc3a02-934a-4c8b-bc4c-2a7fbb5a6ef2"),
                             VehicleSize = 0
                         },
                         new
                         {
-                            Id = new Guid("d42ae769-b316-43c8-8554-412141af8fb8"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("eeaad275-a039-4828-89a1-b56657863794"),
+                            AvaliableDateId = new Guid("c50e9108-a833-43be-96b9-91ccdd770c15"),
                             DistanceToPickUp = 2.0,
                             DriverLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (52.516272 13.377722)"),
+                            ShiftId = new Guid("b4a096f5-4958-4859-aee8-2ec591c7d9ef"),
                             VehicleSize = 1
                         },
                         new
                         {
-                            Id = new Guid("2a152f6c-dbf5-42b7-b3d1-56efebca428e"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("2558296f-7a0c-4730-ac1c-904ca1b2352c"),
+                            AvaliableDateId = new Guid("ff192931-d7e5-4077-ba8e-c4d130032321"),
                             DistanceToPickUp = 1.0,
                             DriverLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (59.3275 18.0675)"),
+                            ShiftId = new Guid("972728ce-c9f0-4382-baa3-38701b3e454c"),
                             VehicleSize = 0
                         },
                         new
                         {
-                            Id = new Guid("aa0dcc1d-da5f-482e-a3e5-5554b5cf507c"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("7baec409-db0d-49a3-8122-9e8cad6f593b"),
+                            AvaliableDateId = new Guid("fe1151f7-57d7-4e14-a55d-8146201d4633"),
                             DistanceToPickUp = 4.0,
                             DriverLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (51.503333 -0.119722)"),
+                            ShiftId = new Guid("7970e097-9128-41a0-9894-24d964fc8a61"),
                             VehicleSize = 2
                         },
                         new
                         {
-                            Id = new Guid("05ed0d77-abcc-480f-8d8c-4520dd5a1a43"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("e4f265b4-f564-4417-82e6-e5039a87908c"),
+                            AvaliableDateId = new Guid("8584a437-f91c-41fc-9bbf-86d5ffbff0b0"),
                             DistanceToPickUp = 3.0,
                             DriverLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (52.506272 10.377722)"),
+                            ShiftId = new Guid("75cd05ca-94be-464c-b1ab-796c57a3ba81"),
                             VehicleSize = 0
                         });
                 });
@@ -197,24 +258,27 @@ namespace MatchingAlgo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1bf35939-759f-4874-b958-4507c6afee09"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("a4f4865e-eec9-4d98-b0f5-c66fa3a87eed"),
+                            AvaliableDateId = new Guid("448b917a-2ae3-4016-afa8-8fba36230d05"),
                             DistanceToPickUp = 5.0,
-                            HelperLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (51.518 7.45425)")
+                            HelperLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (51.518 7.45425)"),
+                            ShiftId = new Guid("35bc3a02-934a-4c8b-bc4c-2a7fbb5a6ef2")
                         },
                         new
                         {
-                            Id = new Guid("b3d821f8-4661-40e5-9633-9755c0e8b13e"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("d2759648-0c35-47fc-8d7f-b9adbe6b7f20"),
+                            AvaliableDateId = new Guid("fe1151f7-57d7-4e14-a55d-8146201d4633"),
                             DistanceToPickUp = 3.0,
-                            HelperLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (51.503333 -0.119722)")
+                            HelperLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (51.503333 -0.119722)"),
+                            ShiftId = new Guid("c0f4fa61-a2e6-4c74-b26e-db4fe1409146")
                         },
                         new
                         {
-                            Id = new Guid("e9abb058-4a5b-4814-923d-c6925690fedf"),
-                            AvaliableDateId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            Id = new Guid("e8f2b04d-6b60-4c35-8c6f-9f9454091821"),
+                            AvaliableDateId = new Guid("8584a437-f91c-41fc-9bbf-86d5ffbff0b0"),
                             DistanceToPickUp = 3.0,
-                            HelperLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (59.3275 18.0675)")
+                            HelperLocation = (NetTopologySuite.Geometries.Point)new NetTopologySuite.IO.WKTReader().Read("SRID=4326;POINT (59.3275 18.0675)"),
+                            ShiftId = new Guid("b4a096f5-4958-4859-aee8-2ec591c7d9ef")
                         });
                 });
 
@@ -224,17 +288,17 @@ namespace MatchingAlgo.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("DriverId")
+                    b.Property<Guid?>("DriverId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("EndAvailableTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("EndAvailableTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<Guid>("HelperId")
+                    b.Property<Guid?>("HelperId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("StartAvailableTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("StartAvailableTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -243,51 +307,47 @@ namespace MatchingAlgo.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("87418dcb-59e1-480c-92c9-de7730780233"),
-                            DriverId = new Guid("7bc431ae-3f80-46e9-887d-6cd354598d87"),
-                            EndAvailableTime = new TimeSpan(0, 11, 30, 0, 0),
-                            HelperId = new Guid("1bf35939-759f-4874-b958-4507c6afee09"),
-                            StartAvailableTime = new TimeSpan(0, 9, 30, 0, 0)
+                            Id = new Guid("35bc3a02-934a-4c8b-bc4c-2a7fbb5a6ef2"),
+                            DriverId = new Guid("6ac16ade-f293-4083-9c90-9af2397fd346"),
+                            EndAvailableTime = new DateTime(2022, 1, 1, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            HelperId = new Guid("a4f4865e-eec9-4d98-b0f5-c66fa3a87eed"),
+                            StartAvailableTime = new DateTime(2022, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("d64823be-617c-4ca2-b730-07ad945bb17b"),
-                            DriverId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            EndAvailableTime = new TimeSpan(0, 10, 30, 0, 0),
-                            HelperId = new Guid("b3d821f8-4661-40e5-9633-9755c0e8b13e"),
-                            StartAvailableTime = new TimeSpan(0, 8, 30, 0, 0)
+                            Id = new Guid("c0f4fa61-a2e6-4c74-b26e-db4fe1409146"),
+                            EndAvailableTime = new DateTime(2022, 1, 1, 10, 30, 0, 0, DateTimeKind.Unspecified),
+                            HelperId = new Guid("d2759648-0c35-47fc-8d7f-b9adbe6b7f20"),
+                            StartAvailableTime = new DateTime(2022, 1, 1, 8, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("c36ef7ea-b585-497c-8d58-3e123684eaf6"),
-                            DriverId = new Guid("d42ae769-b316-43c8-8554-412141af8fb8"),
-                            EndAvailableTime = new TimeSpan(0, 11, 30, 0, 0),
-                            HelperId = new Guid("e9abb058-4a5b-4814-923d-c6925690fedf"),
-                            StartAvailableTime = new TimeSpan(0, 9, 30, 0, 0)
+                            Id = new Guid("b4a096f5-4958-4859-aee8-2ec591c7d9ef"),
+                            DriverId = new Guid("eeaad275-a039-4828-89a1-b56657863794"),
+                            EndAvailableTime = new DateTime(2022, 1, 1, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            HelperId = new Guid("e8f2b04d-6b60-4c35-8c6f-9f9454091821"),
+                            StartAvailableTime = new DateTime(2022, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("f6ea1dd0-f26f-4e14-8afd-5a574892d0d2"),
-                            DriverId = new Guid("2a152f6c-dbf5-42b7-b3d1-56efebca428e"),
-                            EndAvailableTime = new TimeSpan(0, 11, 30, 0, 0),
-                            HelperId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            StartAvailableTime = new TimeSpan(0, 9, 30, 0, 0)
+                            Id = new Guid("972728ce-c9f0-4382-baa3-38701b3e454c"),
+                            DriverId = new Guid("2558296f-7a0c-4730-ac1c-904ca1b2352c"),
+                            EndAvailableTime = new DateTime(2022, 1, 1, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            StartAvailableTime = new DateTime(2022, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("89ca1462-7d61-4549-a5d8-888032da9b70"),
-                            DriverId = new Guid("aa0dcc1d-da5f-482e-a3e5-5554b5cf507c"),
-                            EndAvailableTime = new TimeSpan(0, 11, 30, 0, 0),
-                            HelperId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            StartAvailableTime = new TimeSpan(0, 9, 30, 0, 0)
+                            Id = new Guid("7970e097-9128-41a0-9894-24d964fc8a61"),
+                            DriverId = new Guid("7baec409-db0d-49a3-8122-9e8cad6f593b"),
+                            EndAvailableTime = new DateTime(2022, 1, 1, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            StartAvailableTime = new DateTime(2022, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("27c1c667-1e3a-4988-a550-8e4573493465"),
-                            DriverId = new Guid("05ed0d77-abcc-480f-8d8c-4520dd5a1a43"),
-                            EndAvailableTime = new TimeSpan(0, 11, 30, 0, 0),
-                            HelperId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            StartAvailableTime = new TimeSpan(0, 9, 30, 0, 0)
+                            Id = new Guid("75cd05ca-94be-464c-b1ab-796c57a3ba81"),
+                            DriverId = new Guid("e4f265b4-f564-4417-82e6-e5039a87908c"),
+                            EndAvailableTime = new DateTime(2022, 1, 1, 11, 30, 0, 0, DateTimeKind.Unspecified),
+                            StartAvailableTime = new DateTime(2022, 1, 1, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
